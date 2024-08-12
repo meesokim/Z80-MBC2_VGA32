@@ -1,6 +1,16 @@
 # Z80-MBC2_VGA32
 
+## Compile with Arduino-cli
 
+```bash
+curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.sh | BINDIR=~/.local/bin sh
+arduino-cli config init
+arduino-cli config set board_manager.additional_urls https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json
+arduino-cli core update-index
+arduino-cli core install esp32:esp32@2.0.11
+arduino-cli lib install FabGL
+arduino-cli compile -b esp32:esp32:esp32:PartitionScheme=min_spiffs,PSRAM=disabled
+```
 ## Z80-MBC2 Emulator running on TTGO ESP VGA32
 
 This is a Z80-MBC2 emulator running on a TTGO ESP VGA32 board,
